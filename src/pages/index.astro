@@ -10,125 +10,341 @@
 
   <body style="
     margin:0;
-    background:#0a0a0a;
-    color:white;
-    font-family:Inter, sans-serif;
+    background:#ffffff;
+    color:#111111;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   ">
 
-    <!-- NAVIGATION -->
-    <header style="
-      padding:24px 60px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      border-bottom:1px solid #1f1f1f;
-    ">
+    <!-- HEADER -->
+<header style="
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:24px 60px;
+  border-bottom:1px solid #e5e5e5;
+">
 
-      <div style="
-        font-size:20px;
-        font-weight:700;
-      ">
-        Chris Richel Long
-      </div>
+  <!-- LEFT BRAND -->
+  <div style="
+    font-size:20px;
+    font-weight:600;
+    color:#111;
+  ">
+    Chris Richel Ong
+  </div>
 
+      <!-- CENTER NAV -->
       <nav style="
         display:flex;
-        gap:24px;
+        gap:28px;
+        position:absolute;
+        left:50%;
+        transform:translateX(-50%);
       ">
-        <a href="/" style="color:#d4d4d4; text-decoration:none;">Home</a>
-        <a href="/work" style="color:#d4d4d4; text-decoration:none;">Work</a>
-        <a href="/about" style="color:#d4d4d4; text-decoration:none;">About</a>
+        <a href="/" style="text-decoration:none; color:#111;">Home</a>
+        <a href="/work" style="text-decoration:none; color:#111;">Work</a>
+        <a href="/about" style="text-decoration:none; color:#111;">About</a>
       </nav>
+
+      <!-- RIGHT CTA -->
+      <a
+        href="mailto:chrisrichelong@gmail.com"
+        style="
+          margin-left:auto;
+          background:#16a34a;
+          color:white;
+          padding:10px 18px;
+          border-radius:999px;
+          text-decoration:none;
+          font-weight:600;
+          font-size:20px;
+        "
+      >
+        Email an inquiry
+      </a>
+
     </header>
 
-    <!-- HERO SECTION -->
-    <section style="
-      max-width:1100px;
-      margin:0 auto;
-      padding:120px 24px;
+    <!-- HERO -->
+<main style="
+  max-width:900px;
+  margin:0 auto;
+  padding:20px 24px;
+  text-align:left;
+">
+
+  <h1 style="
+    font-size:64px;
+    line-height:1.1;
+    margin-bottom:24px;
+  ">
+    Business communication for service providers
+  </h1>
+
+  <p style="
+    font-size:20px;
+    line-height:1.7;
+    color:#444;
+    max-width:700px;
+    margin-bottom:40px;
+  ">
+I help service providers improve how they communicate online so more customers understand their services, trust their business and take action. <p style="
+  font-size:16px;
+  color:#16a34a;;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:24px;
+">
+  <span style="
+    width:8px;
+    height:8px;
+    background:#16a34a;
+    border-radius:50%;
+    display:inline-block;
+  "></span>
+
+  Available for freelance copywriting projects
+</p>
+
+  <!-- CTA BUTTONS -->
+  <div style="
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  ">
+
+    <!-- PRIMARY CTA -->
+    <a
+      href="mailto:chrisrichelong@gmail.com"
+      style="
+        background:#16a34a;
+        color:white;
+        padding:14px 22px;
+        border-radius:999px;
+        text-decoration:none;
+        font-weight:600;
+        font-size:20px;
+        border:1px solid #16a34a;
+      "
+    >
+      Email an inquiry
+    </a>
+
+    <!-- SECONDARY CTA -->
+    <a
+      href="/work"
+      style="
+        background:#ffffff;
+        color:#16a34a;
+        padding:14px 22px;
+        border-radius:999px;
+        text-decoration:none;
+        font-weight:600;
+        font-size:20px;
+        border:1px solid #16a34a;
+      "
+    >
+      Read my work
+    </a>
+
+  </div>
+
+  <section style="
+  max-width:1000px;
+  margin:0 auto;
+  padding:40px 24px;
+">
+
+  <!-- SECTION TITLE -->
+  <h2 style="
+    font-size:36px;
+    margin-bottom:12px;
+  ">
+    How I can help you
+  </h2>
+
+  <p style="
+    font-size:18px;
+    color:#555;
+    max-width:800px;
+    margin-bottom:30px;
+    line-height:1.6;
+  ">
+Most service providers already have people finding them online through Google, Facebook, referrals, or their website. But many potential customers still leave without inquiring or booking.
+  <br /><br />
+I help improve how your business presents its services online so more people understand what you offer and feel confident enough to reach out.</p>
+
+  <!-- CARDS -->
+  <div style="
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:20px;
+  ">
+
+    <!-- CARD 1 -->
+    <div style="
+      border:1px solid #e5e5e5;
+      border-radius:16px;
+      padding:24px;
     ">
-
-      <p style="
-        color:#a1a1aa;
-        margin-bottom:18px;
-        font-size:14px;
-        letter-spacing:1px;
-        text-transform:uppercase;
-      ">
-        Freelance Copywriter
+      <h3 style="font-size:20px; margin-bottom:10px;">
+        You have visibility, but few inquiries
+      </h3>
+      <p style="color:#555; line-height:1.6;">
+      People are finding your business online, but they’re not reaching out or booking. I improve how your services are presented so more visitors turn into calls, messages and customer inquiries.
       </p>
+    </div>
 
-      <h1 style="
-        font-size:72px;
-        line-height:1.05;
-        margin:0 0 32px 0;
-        max-width:850px;
-      ">
-        Copy that turns attention into revenue.
-      </h1>
+    <!-- CARD 2 -->
+    <div style="
+      border:1px solid #e5e5e5;
+      border-radius:16px;
+      padding:24px;
+    ">
+      <h3 style="font-size:20px; margin-bottom:10px;">
+        You’re getting inquiries, but not consistently
+      </h3>
+      <p style="color:#555; line-height:1.6;">
+       Some customers inquire, but it’s inconsistent and difficult to predict. I refine your online communication so customers better understand your services and feel more confident taking the next step.
+      </p>
+    </div>
 
-      <div style="
-        max-width:700px;
-        color:#cfcfcf;
-        font-size:22px;
-        line-height:1.7;
-        margin-bottom:48px;
-      ">
-        <p>
-          I help brands communicate clearly, sell confidently, and sound human online.
-        </p>
+    <!-- CARD 3 -->
+    <div style="
+      border:1px solid #e5e5e5;
+      border-radius:16px;
+      padding:24px;
+    ">
+      <h3 style="font-size:20px; margin-bottom:10px;">
+        You’re attracting the wrong customers
+      </h3>
+      <p style="color:#555; line-height:1.6;">
+         You’re getting inquiries, but many aren't a good fit or don’t turn into paying customers. I help clarify your messaging so the right customers understand your services and are more likely to do business with you.
+      </p>
+    </div>
 
-        <p>
-          From landing pages to long-form content, I write words designed to build trust and drive action.
-        </p>
+  </div>
+</section>
 
-        <p>
-          Clear messaging. Strategic storytelling. Conversion-focused writing.
-        </p>
-      </div>
+<section style="
+  max-width:1000px;
+  margin:0 auto;
+  padding:20px 24px;
+">
 
-      <!-- CTA BUTTONS -->
-      <div style="
-        display:flex;
-        gap:18px;
-        flex-wrap:wrap;
-      ">
+  <!-- TITLE -->
+  <h2 style="
+    font-size:36px;
+    margin-bottom:12px;
+  ">
+    My results & experience
+  </h2>
 
-        <!-- PRIMARY BUTTON -->
-        <a
-          href="mailto:chrisrichelong@gmail.com"
-          style="
-            background:#ffffff;
-            color:#000000;
-            padding:16px 28px;
-            border-radius:999px;
-            text-decoration:none;
-            font-weight:600;
-            font-size:16px;
-          "
-        >
-          Book a consultation
-        </a>
+  <p style="
+    font-size:18px;
+    color:#555;
+    max-width:800px;
+    margin-bottom:30px;
+    line-height:1.6;
+  ">
+  <!-- RESULTS GRID -->
+  <div style="
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:20px;
+  ">
 
-        <!-- SECONDARY BUTTON -->
-        <a
-          href="/work"
-          style="
-            border:1px solid #3f3f46;
-            color:white;
-            padding:16px 28px;
-            border-radius:999px;
-            text-decoration:none;
-            font-weight:600;
-            font-size:16px;
-          "
-        >
-          Read my work
-        </a>
+    <div style="border:1px solid #e5e5e5; border-radius:16px; padding:24px;">
+      <h3 style="font-size:20px; margin-bottom:10px;">1,000 to 14,000+ Member Growth</h3>
+      <p style="color:#555; line-height:1.6;">
+Helped grow a local membership business from 1,000 to 12,000+ members over 5 years as head of marketing </div>
 
-      </div>
+     <div style="border:1px solid #e5e5e5; border-radius:16px; padding:24px;">
+      <h3 style="font-size:20px; margin-bottom:10px;">$3million+ Revenue Impact</h3>
+      <p style="color:#555; line-height:1.6;">
+Contributed over $3million+ in revenue growth through acquisition, conversion and retention of customers</p>
+    </div>
 
-    </section>
+    <div style="border:1px solid #e5e5e5; border-radius:16px; padding:24px;">
+      <h3 style="font-size:20px; margin-bottom:10px;">200,000+ Email Audience Managed</h3>
+      <p style="color:#555; line-height:1.6;">
+Managed email communications for a database of 200,000+ contacts, helping drive engagement, repeat activity and customer retention   </p>
+    </div>
+
+    <div style="border:1px solid #e5e5e5; border-radius:16px; padding:24px;">
+      <h3 style="font-size:20px; margin-bottom:10px;">Affiliate Channel Driving 5 to 20% of Growth</h3>
+      <p style="color:#555; line-height:1.6;">
+Helped build and support an affiliate program that contributed 5 to 20% of new member acquisition at peak, including recruitment, onboarding and preparation of marketing materials for affiliate partners  </p>
+    </div>
+
+        <div style="border:1px solid #e5e5e5; border-radius:16px; padding:24px;">
+      <h3 style="font-size:20px; margin-bottom:10px;">+39% More Customer Inquiries</h3>
+      <p style="color:#555; line-height:1.6;">
+Increased customer inquiries by 39% for a financial service business by making the services clearer and easier to respond to      </p>
+    </div>
+
+    <div style="border:1px solid #e5e5e5; border-radius:16px; padding:24px;">
+      <h3 style="font-size:20px; margin-bottom:10px;">6% to 16% Conversion Rate</h3>
+      <p style="color:#555; line-height:1.6;">
+Improved customer conversion from 6% to 16% for the same financial service business by refining messaging and next-step clarity      </p>
+    </div>
+
+
+  </div>
+
+</section>
+
+<section style="
+  max-width:1000px;
+  margin:0 auto;
+  padding:40px 24px;
+  text-align:left;
+  border-top:1px solid #e5e5e5;
+">
+
+  <!-- TITLE -->
+  <h2 style="
+    font-size:36px;
+    margin-bottom:12px;
+  ">
+    Let’s improve how your business communicates online
+  </h2>
+
+  <!-- TEXT -->
+  <p style="
+    font-size:18px;
+    color:#555;
+    max-width:800px;
+    line-height:1.6;
+    margin-bottom:30px;
+  ">
+    If your business is already getting attention but not enough inquiries or bookings, I can help you improve how you communicate your services so more people take action.
+<br /><br />
+Send me an email at <b>chrisrichelong@gmail.com</b> with the subject line, <b>"Hello"</b> and a description of your business and what you need help with.
+  </p>
+
+  <!-- CTA -->
+  <a
+    href="mailto:chrisrichelong@gmail.com"
+    style="
+      display:inline-block;
+      background:#16a34a;
+      color:#ffffff;
+      padding:14px 22px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:18px;
+      border:1px solid #16a34a;
+    "
+  >
+    Email an inquiry
+  </a>
+
+</section>
+
+</main>
 
   </body>
 </html>
