@@ -1,19 +1,227 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout>
-  <h1>Writing</h1>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Work | Chris Richel Ong</title>
+  </head>
 
-  <p>
-    Selected copywriting work and samples.
-  </p>
+  <body style="
+    margin:0;
+    background:#fff;
+    color:#111;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  ">
 
-  <div style="margin-top:40px;">
-    <p><strong>SaaS Landing Page</strong><br/>Conversion-focused homepage copy.</p>
+  <header style="
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:24px 60px;
+  border-bottom:1px solid #e5e5e5;
+">
 
-    <p style="margin-top:20px;"><strong>Email Campaign</strong><br/>5-email sequence improving engagement.</p>
-
-    <p style="margin-top:20px;"><strong>Product Messaging</strong><br/>Clear positioning for a new product launch.</p>
+  <!-- LEFT -->
+  <div style="font-size:20px; font-weight:600;">
+    Chris Richel Ong
   </div>
-</MainLayout>
+
+  <!-- CENTER (TRUE CENTER, NOT ABSOLUTE) -->
+  <nav style="
+    display:flex;
+    gap:28px;
+    flex:1;
+    justify-content:center;
+  ">
+    <a href="/" style="text-decoration:none; color:#111;">Home</a>
+    <a href="/work" style="text-decoration:none; color:#111;">Work</a>
+    <a href="/about" style="text-decoration:none; color:#111;">About</a>
+  </nav>
+
+  <!-- RIGHT -->
+  <a
+    href="mailto:chrisrichelong@gmail.com"
+    style="
+      background:#16a34a;
+      color:white;
+      padding:14px 22px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:20px;
+      white-space:nowrap;
+    "
+  >
+    Email an inquiry
+  </a>
+
+</header>
+  
+
+    <!-- HERO (MATCHED TYPOGRAPHY) -->
+    <section style="
+      max-width:900px;
+      margin:0 auto;
+      padding:20px 24px;
+    ">
+
+      <h1 style="
+        font-size:64px;
+        line-height:1.1;
+        margin-bottom:24px;
+      ">
+        Selected Work & Results
+      </h1>
+
+      <p style="
+        font-size:20px;
+        line-height:1.7;
+        color:#444;
+        max-width:700px;
+      ">
+        A case study library of results-focused projects across business communication and marketing.
+      </p>
+
+    </section>
+
+    <!-- CASE STUDIES (MATCHED SYSTEM) -->
+    <section style="
+      max-width:900px;
+      margin:0 auto;
+      padding:40px 24px;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    ">
+
+      <div style="
+  border:1px solid #e5e5e5;
+  border-radius:16px;
+  padding:32px;
+  position:relative;
+  background:#fff;
+">
+
+  <!-- subtle green accent line -->
+  <div style="
+    position:absolute;
+    left:0;
+    top:24px;
+    bottom:24px;
+    width:3px;
+    background:#16a34a;
+    border-radius:3px;
+  "></div>
+
+  <!-- TITLE -->
+  <h3 style="
+    font-size:22px;
+    margin:0 0 20px 0;
+    padding-left:12px;
+  ">
+    $3M+ Revenue Impact
+  </h3>
+
+  <!-- CONTEXT -->
+  <div style="margin-bottom:18px;">
+    <p style="
+      font-size:16px;
+      color:#555;
+      margin:0 0 6px 0;
+      font-weight:600;
+      padding-left:12px;
+    ">
+      Context
+    </p>
+    <p style="
+      font-size:18px;
+      color:#111;
+      line-height:1.7;
+      margin:0;
+      padding-left:12px;
+    ">
+      A fast-growing local membership-based business where marketing and customer communication needed more consistent execution as the company scaled.
+    </p>
+  </div>
+
+  <!-- PROBLEM -->
+  <div style="margin-bottom:18px;">
+    <p style="
+      font-size:16px;
+      color:#555;
+      margin:0 0 6px 0;
+      font-weight:600;
+      padding-left:12px;
+    ">
+      Problem
+    </p>
+    <p style="
+      font-size:18px;
+      color:#111;
+      line-height:1.7;
+      margin:0;
+      padding-left:12px;
+    ">
+      The founder was focused on growing the business and needed help to manage day-to-day marketing and customer communication.
+    </p>
+  </div>
+
+  <!-- WHAT I DID -->
+  <div style="margin-bottom:18px;">
+    <p style="
+      font-size:16px;
+      color:#555;
+      margin:0 0 10px 0;
+      font-weight:600;
+      padding-left:12px;
+    ">
+      What I did
+    </p>
+
+    <ul style="
+      font-size:18px;
+      color:#111;
+      line-height:1.7;
+      margin:0;
+      padding-left:28px;
+    ">
+      <li>Took over customer communication across email and Facebook</li>
+      <li>Managed marketing launches to enroll new paying members</li>
+      <li>Launched campaigns for new business offers and programs</li>
+      <li>Helped grow and maintain audience channels (Facebook page, Facebook group, email list)</li>
+    </ul>
+  </div>
+
+  <!-- RESULT -->
+  <div>
+    <p style="
+      font-size:16px;
+      color:#555;
+      margin:0 0 10px 0;
+      font-weight:600;
+      padding-left:12px;
+    ">
+      Result
+    </p>
+
+    <ul style="
+      font-size:18px;
+      color:#111;
+      line-height:1.7;
+      margin:0;
+      padding-left:28px;
+    ">
+      <li>Contributed $3million+ in revenue impact</li>
+      <li>Improved engagement across Facebook and email channels</li>
+      <li>Supported higher membership enrollments through consistent execution</li>
+    </ul>
+  </div>
+
+</div>
+
+    </section>
+
+  </body>
+</html>
