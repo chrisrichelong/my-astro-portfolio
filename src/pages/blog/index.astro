@@ -1,114 +1,134 @@
 ---
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
-import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
-import Header from '../../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
-
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
 ---
 
-<!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Chris Richel Long | Copywriter</title>
+  </head>
+
+  <body style="
+    margin:0;
+    background:#0a0a0a;
+    color:white;
+    font-family:Inter, sans-serif;
+  ">
+
+    <!-- NAVIGATION -->
+    <header style="
+      padding:24px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid #1f1f1f;
+    ">
+
+      <div style="
+        font-size:20px;
+        font-weight:700;
+      ">
+        Chris Richel Long
+      </div>
+
+      <nav style="
+        display:flex;
+        gap:24px;
+      ">
+        <a href="/" style="color:#d4d4d4; text-decoration:none;">Home</a>
+        <a href="/work" style="color:#d4d4d4; text-decoration:none;">Work</a>
+        <a href="/about" style="color:#d4d4d4; text-decoration:none;">About</a>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section style="
+      max-width:1100px;
+      margin:0 auto;
+      padding:120px 24px;
+    ">
+
+      <p style="
+        color:#a1a1aa;
+        margin-bottom:18px;
+        font-size:14px;
+        letter-spacing:1px;
+        text-transform:uppercase;
+      ">
+        Freelance Copywriter
+      </p>
+
+      <h1 style="
+        font-size:72px;
+        line-height:1.05;
+        margin:0 0 32px 0;
+        max-width:850px;
+      ">
+        Copy that turns attention into revenue.
+      </h1>
+
+      <div style="
+        max-width:700px;
+        color:#cfcfcf;
+        font-size:22px;
+        line-height:1.7;
+        margin-bottom:48px;
+      ">
+        <p>
+          I help brands communicate clearly, sell confidently, and sound human online.
+        </p>
+
+        <p>
+          From landing pages to long-form content, I write words designed to build trust and drive action.
+        </p>
+
+        <p>
+          Clear messaging. Strategic storytelling. Conversion-focused writing.
+        </p>
+      </div>
+
+      <!-- CTA BUTTONS -->
+      <div style="
+        display:flex;
+        gap:18px;
+        flex-wrap:wrap;
+      ">
+
+        <!-- PRIMARY BUTTON -->
+        <a
+          href="mailto:your@email.com"
+          style="
+            background:#ffffff;
+            color:#000000;
+            padding:16px 28px;
+            border-radius:999px;
+            text-decoration:none;
+            font-weight:600;
+            font-size:16px;
+          "
+        >
+          Book a consultation
+        </a>
+
+        <!-- SECONDARY BUTTON -->
+        <a
+          href="/work"
+          style="
+            border:1px solid #3f3f46;
+            color:white;
+            padding:16px 28px;
+            border-radius:999px;
+            text-decoration:none;
+            font-weight:600;
+            font-size:16px;
+          "
+        >
+          Read my work
+        </a>
+
+      </div>
+
+    </section>
+
+  </body>
 </html>
