@@ -96,21 +96,23 @@
 
       /* LIGHTBOX */
       #lightbox {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.9);
-        z-index: 9999;
-        align-items: center;
-        justify-content: center;
-      }
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 99999;
+  overflow-y: auto;
+  padding: 40px 20px;
+}
 
-      #lightbox img {
-        max-width: 95vw;
-        max-height: 85vh;
-        object-fit: contain;
-        border-radius: 10px;
-      }
+#lightbox img {
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+}
 
       /* VIDEO GRID */
       .video-grid {
@@ -310,20 +312,29 @@ There was a strong improvement after adding these elements:
     <div id="lightbox" onclick="closeLightbox()">
       <img id="lightbox-img" />
     </div>
+<script>
+  function openLightbox(src) {
+    const box = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
 
-    <script>
-      function openLightbox(src) {
-        document.getElementById("lightbox").style.display = "flex";
-        document.getElementById("lightbox-img").src = src;
-        document.body.style.overflow = "hidden";
-      }
+    img.src = src;
+    box.style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
 
-      function closeLightbox() {
-        document.getElementById("lightbox").style.display = "none";
-        document.getElementById("lightbox-img").src = "";
-        document.body.style.overflow = "auto";
-      }
-    </script>
+  function closeLightbox() {
+    const box = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+
+    box.style.display = "none";
+    img.src = "";
+    document.body.style.overflow = "auto";
+  }
+
+  // safety: expose globally (important in Astro / builds)
+  window.openLightbox = openLightbox;
+  window.closeLightbox = closeLightbox;
+</script>
 
   </body>
 </html>
