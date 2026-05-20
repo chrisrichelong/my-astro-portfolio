@@ -8,6 +8,66 @@
     <title>Chris Richel Ong | Copywriter</title>
   </head>
 
+  <style>
+  /* MOBILE RESPONSIVE */
+  @media (max-width: 768px) {
+
+    header {
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px 24px !important;
+      text-align: center;
+    }
+
+    nav {
+      justify-content: center !important;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      font-size: 42px !important;
+      line-height: 1.2 !important;
+    }
+
+    h2 {
+      font-size: 30px !important;
+    }
+
+    p {
+      font-size: 17px !important;
+    }
+
+    main {
+      padding: 20px !important;
+    }
+
+    a[href^="mailto:"] {
+      font-size: 16px !important;
+      padding: 12px 18px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+
+    h1 {
+      font-size: 34px !important;
+    }
+
+    h2 {
+      font-size: 26px !important;
+    }
+
+    p {
+      font-size: 16px !important;
+      line-height: 1.6 !important;
+    }
+
+    div[style*="grid-template-columns"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+
   <body style="
     margin:0;
     background:#ffffff;
