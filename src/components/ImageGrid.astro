@@ -1,0 +1,25 @@
+---
+const { images } = Astro.props;
+---
+
+<div style="
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+">
+
+  {images.map((img) => (
+    <img
+      src={img.src}
+      alt={img.alt}
+      style="
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        display: block;
+        object-fit: cover;
+      "
+    />
+  ))}
+
+</div>

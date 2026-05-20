@@ -1,242 +1,177 @@
 ---
+const websitePages = [
+  "/work/case-01-web-01.jpg",
+  "/work/case-01-web-02.jpg",
+  "/work/case-01-web-03.png",
+  "/work/case-01-web-05.jpg",
+  "/work/case-01-web-06.jpg",
+  "/work/case-01-web-07.png",
+];
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Work | Chris Richel Ong</title>
+    <title>Selected Work | Chris Richel Ong</title>
+
+    <style>
+      .work-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      @media (max-width: 768px) {
+        .work-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .work-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .work-img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 1px solid #eee;
+        cursor: pointer;
+        transition: transform 0.25s ease;
+      }
+
+      .work-img:hover {
+        transform: scale(1.02);
+      }
+    </style>
   </head>
 
   <body style="
     margin:0;
-    background:#fff;
-    color:#111;
+    background:#ffffff;
+    color:#111111;
     font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   ">
 
-  <header style="
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:24px 60px;
-  border-bottom:1px solid #e5e5e5;
-">
+    <!-- HEADER -->
+    <header style="
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:24px 60px;
+      border-bottom:1px solid #e5e5e5;
+    ">
+      <div style="font-size:20px; font-weight:600;">
+        Chris Richel Ong
+      </div>
 
-  <!-- LEFT -->
-  <div style="font-size:20px; font-weight:600;">
-    Chris Richel Ong
-  </div>
+      <nav style="display:flex; gap:28px; flex:1; justify-content:center;">
+        <a href="/" style="text-decoration:none; color:#111;">Home</a>
+        <a href="/work" style="text-decoration:none; color:#16a34a; font-weight:600;">Work</a>
+        <a href="/about" style="text-decoration:none; color:#111;">About</a>
+      </nav>
 
-  <!-- CENTER (TRUE CENTER, NOT ABSOLUTE) -->
-  <nav style="
-  display:flex;
-  gap:28px;
-  flex:1;
-  justify-content:center;
-">
-  <a href="/" style="text-decoration:none; color:#111;">
-    Home
-  </a>
+      <a href="mailto:chrisrichelong@gmail.com" style="
+        background:#16a34a;
+        color:white;
+        padding:14px 22px;
+        border-radius:999px;
+        text-decoration:none;
+        font-weight:600;
+        font-size:20px;
+        white-space:nowrap;
+      ">
+        Email an inquiry
+      </a>
+    </header>
 
-  <a
-    href="/work"
-    style="
-      text-decoration:none;
-      color:#16a34a;
-      font-weight:600;
-    "
-  >
-    Work
-  </a>
-
-  <a href="/about" style="text-decoration:none; color:#111;">
-    About
-  </a>
-</nav>
-
-  <!-- RIGHT -->
-  <a
-    href="mailto:chrisrichelong@gmail.com"
-    style="
-      background:#16a34a;
-      color:white;
-      padding:14px 22px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:600;
-      font-size:20px;
-      white-space:nowrap;
-    "
-  >
-    Email an inquiry
-  </a>
-
-</header>
-  
-
-    <!-- HERO (MATCHED TYPOGRAPHY) -->
-    <section style="
+    <!-- MAIN -->
+    <main style="
       max-width:900px;
       margin:0 auto;
       padding:20px 24px;
+      text-align:left;
     ">
 
-      <h1 style="
-        font-size:64px;
-        line-height:1.1;
-        margin-bottom:24px;
-      ">
-        Selected Work & Results
+      <h1 style="font-size:64px; line-height:1.1; margin-bottom:24px;">
+        Selected Work
       </h1>
 
-      <p style="
-        font-size:20px;
-        line-height:1.7;
-        color:#444;
-        max-width:700px;
-      ">
-        A case study library of results-focused projects across business communication and marketing.
+      <p style="font-size:20px; line-height:1.7; color:#444; max-width:700px; margin-bottom:40px;">
+        These projects improved marketing communication and customer understanding across websites, email, social media, and other business materials
       </p>
 
-    </section>
+      <!-- WEBSITE GRID -->
+      <section style="margin-bottom:60px;">
+        <h2 style="font-size:36px; margin-bottom:20px;">
+          Website Pages
+        </h2>
 
-    <!-- CASE STUDIES (MATCHED SYSTEM) -->
-    <section style="
-      max-width:900px;
-      margin:0 auto;
-      padding:40px 24px;
-      display:flex;
-      flex-direction:column;
-      gap:20px;
-    ">
+        <div class="work-grid">
+          {websitePages.map((img) => (
+            <img
+              src={img}
+              class="work-img"
+              onclick="openLightbox(this.src)"
+            />
+          ))}
+        </div>
+      </section>
+
+    </main>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox"
+      onclick="closeLightbox()"
+      style="
+        display:none;
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,0.9);
+        z-index:9999;
+      ">
 
       <div style="
-  border:1px solid #e5e5e5;
-  border-radius:16px;
-  padding:32px;
-  position:relative;
-  background:#fff;
-">
+        width:100%;
+        height:100%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      ">
+        <img id="lightbox-img"
+          style="
+            max-width:95vw;
+            max-height:85vh;
+            object-fit:contain;
+            border-radius:10px;
+          "
+        />
+      </div>
+    </div>
 
-  <!-- subtle green accent line -->
-  <div style="
-    position:absolute;
-    left:0;
-    top:24px;
-    bottom:24px;
-    width:3px;
-    background:#16a34a;
-    border-radius:3px;
-  "></div>
+    <script>
+      window.openLightbox = function (src) {
+        const box = document.getElementById("lightbox");
+        const img = document.getElementById("lightbox-img");
 
-  <!-- TITLE -->
-  <h3 style="
-    font-size:22px;
-    margin:0 0 20px 0;
-    padding-left:12px;
-  ">
-    $3M+ Revenue Impact
-  </h3>
+        img.src = src;
+        box.style.display = "block";
+        document.body.style.overflow = "hidden";
+      };
 
-  <!-- CONTEXT -->
-  <div style="margin-bottom:18px;">
-    <p style="
-      font-size:16px;
-      color:#555;
-      margin:0 0 6px 0;
-      font-weight:600;
-      padding-left:12px;
-    ">
-      Context
-    </p>
-    <p style="
-      font-size:18px;
-      color:#111;
-      line-height:1.7;
-      margin:0;
-      padding-left:12px;
-    ">
-      A fast-growing local membership-based business where marketing and customer communication needed more consistent execution as the company scaled.
-    </p>
-  </div>
+      window.closeLightbox = function () {
+        const box = document.getElementById("lightbox");
+        const img = document.getElementById("lightbox-img");
 
-  <!-- PROBLEM -->
-  <div style="margin-bottom:18px;">
-    <p style="
-      font-size:16px;
-      color:#555;
-      margin:0 0 6px 0;
-      font-weight:600;
-      padding-left:12px;
-    ">
-      Problem
-    </p>
-    <p style="
-      font-size:18px;
-      color:#111;
-      line-height:1.7;
-      margin:0;
-      padding-left:12px;
-    ">
-      The founder was focused on growing the business and needed help to manage day-to-day marketing and customer communication.
-    </p>
-  </div>
-
-  <!-- WHAT I DID -->
-  <div style="margin-bottom:18px;">
-    <p style="
-      font-size:16px;
-      color:#555;
-      margin:0 0 10px 0;
-      font-weight:600;
-      padding-left:12px;
-    ">
-      What I did
-    </p>
-
-    <ul style="
-      font-size:18px;
-      color:#111;
-      line-height:1.7;
-      margin:0;
-      padding-left:28px;
-    ">
-      <li>Took over customer communication across email and Facebook</li>
-      <li>Managed marketing launches to enroll new paying members</li>
-      <li>Launched campaigns for new business offers and programs</li>
-      <li>Helped grow and maintain audience channels (Facebook page, Facebook group, email list)</li>
-    </ul>
-  </div>
-
-  <!-- RESULT -->
-  <div>
-    <p style="
-      font-size:16px;
-      color:#555;
-      margin:0 0 10px 0;
-      font-weight:600;
-      padding-left:12px;
-    ">
-      Result
-    </p>
-
-    <ul style="
-      font-size:18px;
-      color:#111;
-      line-height:1.7;
-      margin:0;
-      padding-left:28px;
-    ">
-      <li>Contributed $3million+ in revenue impact</li>
-      <li>Improved engagement across Facebook and email channels</li>
-      <li>Supported higher membership enrollments through consistent execution</li>
-    </ul>
-  </div>
-
-</div>
-
-    </section>
+        box.style.display = "none";
+        img.src = "";
+        document.body.style.overflow = "auto";
+      };
+    </script>
 
   </body>
 </html>
