@@ -111,6 +111,31 @@
         margin: auto;
         display: block;
       }
+
+      .video-thumb {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  cursor: pointer;
+  display: block;
+}
+
+.video-thumb {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  display: block;
+  background: #000;
+}
+
+@media (max-width: 700px) {
+  div[style*="grid-template-columns:repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
     </style>
   </head>
 
@@ -219,6 +244,82 @@ There was a strong improvement after adding these elements:<p>
           </p>
         </div>
       </div>
+
+      <!-- VIDEO TESTIMONIALS -->
+<h2 style="margin-top:60px;">Video Testimonials</h2>
+
+<div style="
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:24px;
+  margin-bottom:60px;
+">
+
+  <!-- VIDEO 1 -->
+  <div>
+    <video class="video-thumb" controls>
+      <source src="/work/testimonial-01.mp4" type="video/mp4" />
+    </video>
+
+    <p style="
+      font-size:14px;
+      color:#555;
+      line-height:1.6;
+      margin-top:10px;
+    ">
+      "I've hired other copywriters before, but no one has nailed it like Chris did! I'm so pleased with the results." - Stacy Brookman, Leadership Coach
+    </p>
+  </div>
+
+  <!-- VIDEO 2 -->
+  <div>
+    <video class="video-thumb" controls>
+      <source src="/work/testimonial-02.mp4" type="video/mp4" />
+    </video>
+
+    <p style="
+      font-size:14px;
+      color:#555;
+      line-height:1.6;
+      margin-top:10px;
+    ">
+      "...to any other company out there that wants content, copy, press releases or whatever else, she's a good author, she knows how to write well, she knows how to optimize well for SEO, I highly recommend her..." - Patrick Murray, Founder of On Air Parking
+    </p>
+  </div>
+
+  <!-- VIDEO 3 -->
+  <div>
+    <video class="video-thumb" controls>
+      <source src="/work/testimonial-03.mp4" type="video/mp4" />
+    </video>
+
+    <p style="
+      font-size:14px;
+      color:#555;
+      line-height:1.6;
+      margin-top:10px;
+    ">
+      "...something you really need to know about Chris, Chris really cares about your success, I can say that 100% without a doubt!" - Jeff Lambert, Author, Race Sponsorships
+    </p>
+  </div>
+
+  <!-- VIDEO 4 -->
+  <div>
+    <video class="video-thumb" controls>
+      <source src="/work/testimonial-04.mp4" type="video/mp4" />
+    </video>
+
+    <p style="
+      font-size:14px;
+      color:#555;
+      line-height:1.6;
+      margin-top:10px;
+    ">
+      "...she brings something unique to the table, so I'm constantly thrilled with the results I got..." - Willy Lin, WAH Academy
+    </p>
+  </div>
+
+</div>
 
     </main>
 
