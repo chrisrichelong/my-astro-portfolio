@@ -12,7 +12,6 @@
         font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
       }
 
-      /* KEEP HOME STYLE HEADER FEEL */
       header {
         display: flex;
         align-items: center;
@@ -28,7 +27,6 @@
         justify-content: center;
       }
 
-      /* PAGE LAYOUT */
       main {
         max-width: 900px;
         margin: 0 auto;
@@ -41,6 +39,11 @@
         margin-bottom: 16px;
       }
 
+      h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
       p.subtitle {
         font-size: 20px;
         line-height: 1.7;
@@ -49,12 +52,7 @@
         margin-bottom: 40px;
       }
 
-      h2 {
-        font-size: 36px;
-        margin-bottom: 20px;
-      }
-
-      /* 2-COLUMN CASE STUDY */
+      /* CASE STUDY LAYOUT */
       .case {
         display: grid;
         grid-template-columns: 200px 1fr;
@@ -70,19 +68,19 @@
       }
 
       .thumb {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 12px;
-  border: 1px solid #eee;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 12px;
+        border: 1px solid #eee;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
 
-.thumb:hover {
-  transform: scale(1.03);
-}
+      .thumb:hover {
+        transform: scale(1.03);
+      }
 
       .text p {
         color: #555;
@@ -103,93 +101,77 @@
         inset: 0;
         background: rgba(0,0,0,0.9);
         z-index: 9999;
+        align-items: center;
+        justify-content: center;
       }
 
       #lightbox img {
         max-width: 95vw;
         max-height: 85vh;
-        margin: auto;
-        display: block;
+        object-fit: contain;
+        border-radius: 10px;
+      }
+
+      /* VIDEO GRID */
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin-bottom: 60px;
       }
 
       .video-thumb {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 12px;
-  border: 1px solid #eee;
-  display: block;
-  background: #000;
-}
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 12px;
+        border: 1px solid #eee;
+        display: block;
+        background: #000;
+      }
 
-@media (max-width: 700px) {
-  div[style*="grid-template-columns:repeat(2, 1fr)"] {
-    grid-template-columns: 1fr !important;
-  }
-}
-/* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
+      @media (max-width: 700px) {
+        .video-grid {
+          grid-template-columns: 1fr;
+        }
+      }
 
-  header {
-    flex-direction: column;
-    gap: 18px;
-    padding: 20px 24px;
-    text-align: center;
-  }
+      /* MOBILE */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          gap: 18px;
+          padding: 20px 24px;
+          text-align: center;
+        }
 
-  nav {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
+        nav {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 16px;
+        }
 
-  main {
-    padding: 20px;
-  }
+        h1 {
+          font-size: 42px;
+        }
 
-  h1 {
-    font-size: 42px;
-    line-height: 1.15;
-  }
+        h2 {
+          font-size: 30px;
+        }
 
-  h2 {
-    font-size: 30px;
-  }
+        main {
+          padding: 20px;
+        }
 
-  .subtitle {
-    font-size: 18px;
-  }
-
-  .case {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .thumb {
-    height: 220px;
-  }
-
-  .video-thumb {
-    width: 100%;
-  }
-
-  /* VIDEO GRID */
-  .video-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* BUTTONS */
-  .cta-buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-}
+        .thumb {
+          height: 220px;
+        }
+      }
     </style>
   </head>
 
   <body>
 
-    <!-- HEADER (UNCHANGED STYLE) -->
+    <!-- HEADER -->
     <header>
       <div style="font-size:20px; font-weight:600;">
         Chris Richel Ong
@@ -220,51 +202,46 @@
 
       <div class="case">
 
-  <!-- LEFT: IMAGE WRAPPER -->
-  <div style="position:relative;">
+        <div style="position:relative;">
+          <img class="thumb"
+               src="/work/case-01-web-01.png"
+               onclick="openLightbox(this.src)" />
 
-    <img class="thumb"
-         src="/work/case-01-web-01.png"
-         onclick="openLightbox(this.src)" 
-         style="cursor:pointer;" />
+          <div style="
+            position:absolute;
+            bottom:10px;
+            left:10px;
+            background:rgba(0,0,0,0.6);
+            color:white;
+            font-size:12px;
+            padding:6px 10px;
+            border-radius:999px;
+            pointer-events:none;
+          ">
+            Click to view full page
+          </div>
+        </div>
 
-    <!-- subtle label -->
-    <div style="
-      position:absolute;
-      bottom:10px;
-      left:10px;
-      background:rgba(0,0,0,0.6);
-      color:white;
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-      pointer-events:none;
-    ">
-      Click to view full page
-    </div>
+        <div class="text">
+          <p>
+          This project involved improving how an online product was presented so that customers could understand it faster and make decisions with more confidence.
+There was a strong improvement after adding these elements:
+          </p>
 
-  </div>
+          <p><b>What was improved:</b></p>
 
-  <!-- RIGHT: TEXT -->
-  <div class="text">
-    <p>
-This project involved improving how an online product was presented so that customers could understand it faster and make decisions with more confidence.    </p>
-There was a strong improvement after adding these elements:<p>
-    <p><b>What was improved:</b></p>
+          <ul>
+            <li>Trust signals as proof that the business is legitimate (testimonials, “legit check” section, ecommerce proof)</li>
+            <li>Made the product easier to understand and added a strong guarantee</li>
+            <li>Reorganized content and sections so it flows better (problem, what people wanted, examples/case study)</li>
+            <li>Improved check-out experience (added payment details and sidebar trust elements)</li>
+          </ul>
 
-    <ul>
-      <li>Trust signals as proof that the business is legitimate (testimonials, “legit check” section, ecommerce proof)</li>
-      <li>Made the offer easier to understand and added a strong guarantee</li>
-      <li>Reorganized content and sections so it flows better (problem, what people wanted, examples/case study)</li>
-      <li>Improved check-out experience (added payment details and sidebar trust elements)</li>
-    </ul>
-
-    <p style="margin-top:12px;">
-      <b>Result:</b> The page improved from <strong>an average of 17% to above 30%</strong> after improving clarity, trust and presentation.
-    </p>
-  </div>
-
-</div>
+          <p style="margin-top:12px;">
+            <b>Result:</b> The page improved from <strong>an average of 17% to above 30%</strong> after improving clarity, trust and presentation.
+          </p>
+        </div>
+      </div>
 
       <!-- EMAILS -->
       <h2>Emails</h2>
@@ -276,114 +253,56 @@ There was a strong improvement after adding these elements:<p>
 
         <div class="text">
           <p>
-            This project focused on nurturing potential customers after they joined a Facebook group and gave their email.
-            A 7-day sequence was written to nurture them and demonstrate the benefits of the product.
+            This project focused on nurturing potential customers after they joined a Facebook group and gave their email. A 7-day sequence was written to nurture them and demonstrate the benefits of the product
           </p>
 
           <p><b>The sequence was written using:</b></p>
           <ul>
             <li>Storytelling to explain the experience of the product</li>
             <li>Clear focus on common problems customers were facing</li>
-            <li>Language customers used to described their problems</li>
+            <li>Language customers actually used to describe their situation</li>
           </ul>
 
           <p style="margin-top:12px;">
-            <b>Result:</b> The email sequence achieved <strong>65.44% open rate and 11.48% click rate</strong>, showing strong engagement and interest from potential customers during the decision process.
+            <b>Result:</b> The email sequence achieved <strong>65.44% open rate and 11.48% click rate</strong>, showing strong engagement and interest from potential customers during the decision process.
           </p>
         </div>
       </div>
 
       <!-- VIDEO TESTIMONIALS -->
-<h2 style="margin-top:60px;">Video Testimonials</h2>
+      <h2>Video Testimonials</h2>
 
-<div class="video-grid" style="
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:24px;
-  margin-bottom:60px;
-">
+      <div class="video-grid">
 
-  <!-- VIDEO 1 -->
-  <div>
-    <iframe
-  class="video-thumb"
-  src="https://www.youtube.com/embed/7UX8cpjlifY"
-  title="Client Testimonial"
-  frameborder="0"
-  allowfullscreen>
-</iframe>
+        <div>
+          <iframe class="video-thumb" src="https://www.youtube.com/embed/7UX8cpjlifY" allowfullscreen></iframe>
+          <p style="font-size:14px;color:#555;margin-top:10px;">
+            "I've hired other copywriters before, but no one has nailed it like Chris did! I'm so pleased with the results." - Stacy Brookman, Leadership Coach
+          </p>
+        </div>
 
-    <p style="
-      font-size:14px;
-      color:#555;
-      line-height:1.6;
-      margin-top:10px;
-    ">
-      "I've hired other copywriters before, but no one has nailed it like Chris did! I'm so pleased with the results." - Stacy Brookman, Leadership Coach
-    </p>
-  </div>
+        <div>
+          <iframe class="video-thumb" src="https://www.youtube.com/embed/q1_6nMi4yLI" allowfullscreen></iframe>
+          <p style="font-size:14px;color:#555;margin-top:10px;">
+            "...to any other company out there that wants content, copy, press releases or whatever else, she's a good author, she knows how to write well, she knows how to optimize well for SEO, I highly recommend her..." - Patrick Murray, Founder of On Air Parking
+          </p>
+        </div>
 
-  <!-- VIDEO 2 -->
-  <div>
-    <iframe
-  class="video-thumb"
-  src="https://www.youtube.com/embed/q1_6nMi4yLI"
-  title="Client Testimonial"
-  frameborder="0"
-  allowfullscreen>
-</iframe>
+        <div>
+          <iframe class="video-thumb" src="https://www.youtube.com/embed/JT-sKUanmO8" allowfullscreen></iframe>
+          <p style="font-size:14px;color:#555;margin-top:10px;">
+            "...something you really need to know about Chris, Chris really cares about your success, I can say that 100% without a doubt!" - Jeff Lambert, Author, Race Sponsorships
+          </p>
+        </div>
 
-    <p style="
-      font-size:14px;
-      color:#555;
-      line-height:1.6;
-      margin-top:10px;
-    ">
-      "...to any other company out there that wants content, copy, press releases or whatever else, she's a good author, she knows how to write well, she knows how to optimize well for SEO, I highly recommend her..." - Patrick Murray, Founder of On Air Parking
-    </p>
-  </div>
+        <div>
+          <iframe class="video-thumb" src="https://www.youtube.com/embed/lQv8ypnuSek" allowfullscreen></iframe>
+          <p style="font-size:14px;color:#555;margin-top:10px;">
+            "...she brings something unique to the table, so I'm constantly thrilled with the results I got..." - Willy Lin, WAH Academy
+          </p>
+        </div>
 
-  <!-- VIDEO 3 -->
-  <div>
-    <iframe
-  class="video-thumb"
-  src="https://www.youtube.com/embed/JT-sKUanmO8"
-  title="Client Testimonial"
-  frameborder="0"
-  allowfullscreen>
-</iframe>
-
-    <p style="
-      font-size:14px;
-      color:#555;
-      line-height:1.6;
-      margin-top:10px;
-    ">
-      "...something you really need to know about Chris, Chris really cares about your success, I can say that 100% without a doubt!" - Jeff Lambert, Author, Race Sponsorships
-    </p>
-  </div>
-
-  <!-- VIDEO 4 -->
-  <div>
-    <iframe
-  class="video-thumb"
-  src="https://www.youtube.com/embed/lQv8ypnuSek"
-  title="Client Testimonial"
-  frameborder="0"
-  allowfullscreen>
-</iframe>
-
-    <p style="
-      font-size:14px;
-      color:#555;
-      line-height:1.6;
-      margin-top:10px;
-    ">
-      "...she brings something unique to the table, so I'm constantly thrilled with the results I got..." - Willy Lin, WAH Academy
-    </p>
-  </div>
-
-</div>
+      </div>
 
     </main>
 
@@ -393,56 +312,18 @@ There was a strong improvement after adding these elements:<p>
     </div>
 
     <script>
-  function openLightbox(src) {
-    console.log("opening:", src);
+      function openLightbox(src) {
+        document.getElementById("lightbox").style.display = "flex";
+        document.getElementById("lightbox-img").src = src;
+        document.body.style.overflow = "hidden";
+      }
 
-    const box = document.getElementById("lightbox");
-    const img = document.getElementById("lightbox-img");
-
-    if (!box || !img) {
-      alert("Lightbox missing from page");
-      return;
-    }
-
-    img.src = src;
-    box.style.display = "flex";
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeLightbox() {
-    const box = document.getElementById("lightbox");
-    const img = document.getElementById("lightbox-img");
-
-    box.style.display = "none";
-    img.src = "";
-    document.body.style.overflow = "auto";
-  }
-
-  // safety check (helps debugging)
-  window.openLightbox = openLightbox;
-  window.closeLightbox = closeLightbox;
-</script>
-
-    <div id="lightbox"
-     onclick="closeLightbox()"
-     style="
-       display:none;
-       position:fixed;
-       inset:0;
-       background:rgba(0,0,0,0.9);
-       z-index:99999;
-       align-items:center;
-       justify-content:center;
-     ">
-
-  <img id="lightbox-img"
-       style="
-         max-width:95vw;
-         max-height:85vh;
-         object-fit:contain;
-         border-radius:10px;
-       " />
-</div>
+      function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+        document.getElementById("lightbox-img").src = "";
+        document.body.style.overflow = "auto";
+      }
+    </script>
 
   </body>
 </html>
