@@ -1,578 +1,332 @@
----
----
-
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Chris Richel Ong | Copywriter</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conference Documentation & Rapporteur Services</title>
 
-    <style>
-  /* MOBILE RESPONSIVE */
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color: #111;
+    background: #fff;
+    line-height: 1.65;
+  }
+
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  /* TYPOGRAPHY (report-like hierarchy) */
+  h1 {
+    font-size: clamp(30px, 4.5vw, 52px);
+    line-height: 1.15;
+    margin: 0 0 14px 0;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: clamp(20px, 3vw, 32px);
+    margin: 0 0 10px 0;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: 17px;
+    margin: 0 0 6px 0;
+  }
+
+  p {
+    font-size: clamp(15px, 2vw, 18px);
+    color: #444;
+    margin: 0 0 10px 0;
+  }
+
+  ul {
+    margin: 0 0 14px 0;
+    padding-left: 18px;
+  }
+
+  li {
+    margin-bottom: 5px;
+    color: #444;
+  }
+
+  /* REPORT-STYLE SPACING SYSTEM */
+  section {
+    padding: 28px 24px;
+  }
+
+  section:last-of-type {
+  padding-bottom: 64px;
+}
+
+  /* slightly tighter spacing between blocks inside sections */
+  .block {
+    margin-bottom: 14px;
+  }
+
+  /* HEADER (kept simple + institutional) */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 56px;
+    border-bottom: 1px solid #e5e5e5;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  nav {
+    display: flex;
+    gap: 18px;
+    flex: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    color: #111;
+    font-size: 14px;
+  }
+
+  nav a.active {
+    color: #16a34a;
+    font-weight: 600;
+  }
+
+  .btn {
+    background: #16a34a;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  /* GRID (slightly tighter) */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+  }
+
+  .card {
+    border: 1px solid #e5e5e5;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  /* MOBILE */
   @media (max-width: 768px) {
-
     header {
       flex-direction: column;
-      gap: 20px;
-      padding: 20px 24px !important;
       text-align: center;
+      padding: 16px 18px;
     }
 
     nav {
-      justify-content: center !important;
-      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    h1 {
-      font-size: 42px !important;
-      line-height: 1.2 !important;
+    section {
+      padding: 24px 18px;
     }
 
-    h2 {
-      font-size: 30px !important;
-    }
-
-    p {
-      font-size: 17px !important;
-    }
-
-    main {
-      padding: 20px !important;
-    }
-
-    a[href^="mailto:"] {
-      font-size: 16px !important;
-      padding: 12px 18px !important;
+    .btn {
+      width: 100%;
+      text-align: center;
     }
   }
 
   @media (max-width: 480px) {
-
-    h1 {
-      font-size: 34px !important;
+    section {
+      padding: 22px 16px;
     }
 
-    h2 {
-      font-size: 26px !important;
-    }
-
-    p {
-      font-size: 16px !important;
-      line-height: 1.6 !important;
-    }
-
-    div[style*="grid-template-columns"] {
-      grid-template-columns: 1fr !important;
+    nav {
+      gap: 10px;
     }
   }
 </style>
+</head>
 
-  </head>
+<body>
 
-
-  <body style="
-    margin:0;
-    background:#ffffff;
-    color:#111111;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  ">
-
-    <header style="
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:24px 60px;
-  border-bottom:1px solid #e5e5e5;
-">
-
-  <!-- LEFT -->
-  <div style="font-size:20px; font-weight:600;">
+<header>
+  <div style="font-weight:600; font-size:18px;">
     Chris Richel Ong
   </div>
 
-  <!-- CENTER (TRUE CENTER, NOT ABSOLUTE) -->
-  <nav style="
-  display:flex;
-  gap:28px;
-  flex:1;
-  justify-content:center;
-">
-  <a
-    href="/"
-    style="
-      text-decoration:none;
-      color:#16a34a;
-      font-weight:600;
-    "
-  >
-    Home
-  </a>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#sample">Sample</a>
+    <a href="#rates">Rates</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <a href="/work" style="text-decoration:none; color:#111;">
-    Work
+  <a class="btn" href="mailto:writing@gmail.com">
+    Email Inquiry
   </a>
-
-  <a href="/about" style="text-decoration:none; color:#111;">
-    About
-  </a>
-</nav>
-
-  <!-- RIGHT -->
-  <a
-    href="mailto:chrisrichelong@gmail.com"
-    style="
-      background:#16a34a;
-      color:white;
-      padding:14px 22px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:600;
-      font-size:20px;
-      white-space:nowrap;
-    "
-  >
-    Email an inquiry
-  </a>
-
 </header>
 
-    <!-- HERO -->
-<main style="
-  max-width:900px;
-  margin:0 auto;
-  padding:20px 24px;
-  text-align:left;
-">
+<main>
 
-  <h1 style="
-    font-size:64px;
-    line-height:1.1;
-    margin-bottom:24px;
-  ">
-    Turning interest into revenue for service businesses
-  </h1>
+<!-- HERO -->
+<section>
+  <h1>Conference Documentation & Rapporteur Services</h1>
 
-  <p style="
-    font-size:20px;
-    line-height:1.7;
-    color:#444;
-    max-width:700px;
-    margin-bottom:40px;
-  ">
-Helping service businesses turn inquiries into paying customers more consistently<p style="
-  font-size:16px;
-  color:#16a34a;;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-bottom:24px;
-">
-  <span style="
-    width:8px;
-    height:8px;
-    background:#16a34a;
-    border-radius:50%;
-    display:inline-block;
-  "></span>
-
-  Available for freelance projects
-</p>
-
-  <!-- CTA BUTTONS -->
-  <div style="
-    display:flex;
-    gap:16px;
-    flex-wrap:wrap;
-  ">
-
-    <!-- PRIMARY CTA -->
-    <a
-      href="mailto:chrisrichelong@gmail.com"
-      style="
-        background:#16a34a;
-        color:white;
-        padding:14px 22px;
-        border-radius:999px;
-        text-decoration:none;
-        font-weight:600;
-        font-size:20px;
-        border:1px solid #16a34a;
-      "
-    >
-      Email an inquiry
-    </a>
-
-    <!-- SECONDARY CTA -->
-    <a
-      href="/work"
-      style="
-        background:#ffffff;
-        color:#16a34a;
-        padding:14px 22px;
-        border-radius:999px;
-        text-decoration:none;
-        font-weight:600;
-        font-size:20px;
-        border:1px solid #16a34a;
-      "
-    >
-      See work
-    </a>
-
-  </div>
-
-  <section style="
-  max-width:1000px;
-  margin:0 auto;
-  padding:40px 24px;
-">
-
-  <!-- SECTION TITLE -->
-  <h2 style="
-    font-size:36px;
-    margin-bottom:12px;
-  ">
-    Where revenue is typically lost
-  </h2>
-
-  <p style="
-    font-size:18px;
-    color:#555;
-    max-width:800px;
-    margin-bottom:30px;
-    line-height:1.6;
-  ">
-Turning interest into revenue is never just a single step. It's a ladder.  <br /><br />
-Most service businesses already have interest coming in. The challenge is guiding potential customers to take the next step and continue moving forward.
-<!-- CARDS -->
-  <div style="
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:20px;
-  ">
-
-    <!-- CARD 1 -->
-    <div style="
-      border:1px solid #e5e5e5;
-      border-radius:16px;
-      padding:24px;
-    ">
-      <h3 style="font-size:20px; margin-bottom:10px;">
-      Not getting enough inquiries 
-      </h3>
-      <p style="color:#555; line-height:1.6;">
-Whether it's a website, Facebook page or another channel, not enough potential customers are reaching out to inquire</p>
-    </div>
-
-    <!-- CARD 2 -->
-    <div style="
-      border:1px solid #e5e5e5;
-      border-radius:16px;
-      padding:24px;
-    ">
-      <h3 style="font-size:20px; margin-bottom:10px;">
-        Inquiries don't turn into paying customers  
-      </h3>
-      <p style="color:#555; line-height:1.6;">
-Potential customers are reaching out, but aren't moving forward to become paying customers </p>
-    </div>
-
-    <!-- CARD 3 -->
-    <div style="
-      border:1px solid #e5e5e5;
-      border-radius:16px;
-      padding:24px;
-    ">
-      <h3 style="font-size:20px; margin-bottom:10px;">
-Revenue is inconsistent or unpredictable </h3>
-      <p style="color:#555; line-height:1.6;">
-Some months are good, others could be better, and it's not always clear why that's the case </p>
-    </div>
-
-  </div>
-</section>
-
-<section style="
-  max-width:900px;
-  margin:0 auto;
-  padding:0px 24px 50px 24px;
-">
-
-  <!-- TITLE -->
-  <h2 style="
-    font-size:36px;
-    margin-bottom:12px;
-  ">
-    How to fix customer flow and revenue leaks
-  </h2>
-
-  <!-- SUBTEXT -->
-  <p style="
-    font-size:18px;
-    color:#555;
-    max-width:760px;
-    margin-bottom:50px;
-    line-height:1.7;
-  ">
-    I look at how customers move from first interest to payment, identify where revenue is being lost, and help simplify the process so more inquiries turn into paying customers.
+  <p>
+    Clear, accurate and structured documentation of formal conferences, assemblies, and organizational meetings.
   </p>
 
-  <!-- TIMELINE -->
-  <div style="
-    position:relative;
-    padding-left:32px;
-    border-left:2px solid #e5e5e5;
-  ">
-
-    <!-- STEP 1 -->
-    <div style="
-      position:relative;
-      margin-bottom:42px;
-    ">
-
-      <div style="
-        position:absolute;
-        left:-42px;
-        top:2px;
-        width:20px;
-        height:20px;
-        border-radius:999px;
-        background:#16a34a;
-      "></div>
-
-      <div style="
-        font-size:14px;
-        font-weight:600;
-        color:#16a34a;
-        margin-bottom:10px;
-        text-transform:uppercase;
-        letter-spacing:0.04em;
-      ">
-        Step 1
-      </div>
-
-      <h3 style="
-        font-size:24px;
-        margin-bottom:12px;
-      ">
-        Improve understanding by reducing confusion and increasing clarity
-      </h3>
-
-      <p style="
-        color:#555;
-        line-height:1.7;
-        max-width:700px;
-      ">
-        Help potential customers understand what the business offers, why it matters and what to do next
-      </p>
-    </div>
-
-    <!-- STEP 2 -->
-    <div style="
-      position:relative;
-      margin-bottom:42px;
-    ">
-
-      <div style="
-        position:absolute;
-        left:-42px;
-        top:2px;
-        width:20px;
-        height:20px;
-        border-radius:999px;
-        background:#16a34a;
-      "></div>
-
-      <div style="
-        font-size:14px;
-        font-weight:600;
-        color:#16a34a;
-        margin-bottom:10px;
-        text-transform:uppercase;
-        letter-spacing:0.04em;
-      ">
-        Step 2
-      </div>
-
-      <h3 style="
-        font-size:24px;
-        margin-bottom:12px;
-      ">
-        Build confidence and trust
-      </h3>
-
-      <p style="
-        color:#555;
-        line-height:1.7;
-        max-width:700px;
-      ">
-        Strengthen confidence through proof, credibility, guarantees, clearer expectations and what happes after payment
-      </p>
-    </div>
-
-    <!-- STEP 3 -->
-    <div style="
-      position:relative;
-    ">
-
-      <div style="
-        position:absolute;
-        left:-42px;
-        top:2px;
-        width:20px;
-        height:20px;
-        border-radius:999px;
-        background:#16a34a;
-      "></div>
-
-      <div style="
-        font-size:14px;
-        font-weight:600;
-        color:#16a34a;
-        margin-bottom:10px;
-        text-transform:uppercase;
-        letter-spacing:0.04em;
-      ">
-        Step 3
-      </div>
-
-      <h3 style="
-        font-size:24px;
-        margin-bottom:12px;
-      ">
-        Make it easier to move forward
-      </h3>
-
-      <p style="
-        color:#555;
-        line-height:1.7;
-        max-width:700px;
-      ">
-        Reduce friction from inquiry to payment at every stage so more interested customers become paying clients
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-<section style="
-  max-width:1000px;
-  margin:0 auto;
-  padding:20px 24px;
-">
-
-  <!-- TITLE -->
-  <h2 style="
-    font-size:36px;
-    margin-bottom:12px;
-  ">
-    Experience & Selected Results
-  </h2>
-
-  <p style="
-    font-size:18px;
-    color:#555;
-    max-width:800px;
-    margin-bottom:30px;
-    line-height:1.6;
-  ">
-  <!-- RESULTS GRID -->
-  <div style="
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:20px;
-  ">
-
-    <div style="border:1px solid #e5e5e5; border-radius:16px; padding:24px;">
-      <h3 style="font-size:20px; margin-bottom:10px;">Membership Growth from 1,000 to 12,000+ Members</h3>
-      <p style="color:#555; line-height:1.6;">
-Supported the long-term growth of a local membership business over five years through marketing, retention, and member acquisition campaigns</div>
-
-     <div style="border:1px solid #e5e5e5; border-radius:16px; padding:24px;">
-      <h3 style="font-size:20px; margin-bottom:10px;">Contributed to $3M+ in Business Revenue</h3>
-      <p style="color:#555; line-height:1.6;">
-Contributed revenue growth through member acquisition, conversion improvement, and marketing new business offers </div>
-
-    <div style="border:1px solid #e5e5e5; border-radius:16px; padding:24px;">
-      <h3 style="font-size:20px; margin-bottom:10px;">Communications for 200,000+ Contacts</h3>
-      <p style="color:#555; line-height:1.6;">
-      Designed and structured communication flows across 200,000+ contacts to improve engagement and retention
-    </div>
-
-    <div style="border:1px solid #e5e5e5; border-radius:16px; padding:24px;">
-      <h3 style="font-size:20px; margin-bottom:10px;">Affiliate Program Supporting Business Growth</h3>
-      <p style="color:#555; line-height:1.6;">
-Helped build and support an affiliate program that contributed 5 to 20% of new member acquisition at peak, including recruitment, onboarding and preparation of marketing materials for affiliate partners  </p>
-    </div>
-
-        <div style="border:1px solid #e5e5e5; border-radius:16px; padding:24px;">
-      <h3 style="font-size:20px; margin-bottom:10px;">+39% Increase in Customer Inquiries</h3>
-      <p style="color:#555; line-height:1.6;">
-Improved service messaging for a financial services business so customers understood the product faster, increasing qualified inquiries by 39%</p>
-    </div>
-
-    <div style="border:1px solid #e5e5e5; border-radius:16px; padding:24px;">
-      <h3 style="font-size:20px; margin-bottom:10px;">6% to 16% Improvement in Conversion Rate</h3>
-      <p style="color:#555; line-height:1.6;">
-Improved customer conversion from 6% to 16% for the same financial services business by redesigning how the offer was communicated, improving clarity</p>
-    </div>
-
-
-  </div>
-
-</section>
-
-<section style="
-  max-width:1000px;
-  margin:0 auto;
-  padding:40px 24px;
-  text-align:left;
-  border-top:1px solid #e5e5e5;
-">
-
-  <!-- TITLE -->
-  <h2 style="
-    font-size:36px;
-    margin-bottom:12px;
-  ">
-   Help for growing service businesses
-  </h2>
-
-  <!-- TEXT -->
-  <p style="
-    font-size:18px;
-    color:#555;
-    max-width:800px;
-    line-height:1.6;
-    margin-bottom:30px;
-  ">
-     Need help turning inquiries into more revenue?
-<br /><br />
-Send an email to <b>chrisrichelong@gmail.com</b> with the subject line <b>"Hello"</b> and a description of your business and your current challenge.
+  <p>
+    My work focuses on capturing both formal proceedings and key discussion highlights suitable for organizational reference, producing reports that are:
   </p>
 
-  <!-- CTA -->
-  <a
-    href="mailto:chrisrichelong@gmail.com"
-    style="
-      display:inline-block;
-      background:#16a34a;
-      color:#ffffff;
-      padding:14px 22px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:600;
-      font-size:20px;
-      border:1px solid #16a34a;
-    "
-  >
-    Email an inquiry
+  <ul>
+    <li>Chronologically organized</li>
+    <li>Clear and easy to follow</li>
+    <li>Formally written for organizational use</li>
+    <li>Focused on key decisions, discussions, and outcomes</li>
+  </ul>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>Core Services</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Plenary & Conference Proceedings</h3>
+      <ul>
+        <li>Call to order and quorum documentation</li>
+        <li>Agenda and motion tracking</li>
+        <li>Approval of minutes and resolutions</li>
+        <li>Structured recording of formal proceedings</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Session Documentation</h3>
+      <ul>
+        <li>Speaker summaries and key messages</li>
+        <li>Panel discussion highlights</li>
+        <li>Q&A documentation</li>
+        <li>Session-by-session reporting</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Conference Reports</h3>
+      <ul>
+        <li>Consolidated event summaries</li>
+        <li>Key takeaways and outcomes</li>
+        <li>Highlights of major discussions</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- SAMPLE WORK -->
+<section id="sample">
+
+  <h2>Sample Work</h2>
+
+  <p>Redacted Conference Documentation Excerpt</p>
+
+  <p>Below is a sample excerpt demonstrating structure, tone, and formatting.</p>
+
+  <!-- SAMPLE IMAGE PLACEHOLDER -->
+  <div style="
+  border:1px solid #e5e5e5;
+  border-radius:12px;
+  padding:16px;
+  margin:16px 0;
+  background:#fafafa;
+">
+  <p style="margin:0 0 10px 0; font-weight:600;">
+    Redacted Conference Documentation Excerpt
+  </p>
+
+  <a href="sample-conference-document.pdf" target="_blank" style="
+    color:#16a34a;
+    font-weight:600;
+    text-decoration:none;
+  ">
+    Click to open a redacted official sample report (PDF) →
   </a>
+</div>
 
+  <p>Sample includes:</p>
+
+  <ul>
+    <li>Formal plenary proceedings formatting</li>
+    <li>Speaker summary structure</li>
+    <li>Motion and resolution documentation style</li>
+    <li>Chronological conference reporting format</li>
+  </ul>
+
+  <p>
+    A full sample is available upon request (redacted versions provided for confidentiality)
+  </p>
+
+</section>
+
+<!-- RATES -->
+<section id="rates">
+  <h2>Rates</h2>
+
+  <p><strong>Conference Documentation Services</strong></p>
+  <p><strong>₱5,000 – ₱15,000 per day</strong></p>
+
+  <p>Rates depend on:</p>
+
+  <ul>
+    <li>Length and complexity of the event</li>
+    <li>Number of sessions covered</li>
+    <li>Travel or on-site requirements (if applicable)</li>
+    <li>Additional arrangements such as accommodation and meals</li>
+  </ul>
+
+  <p>
+    Engagements are billed on a per-day basis rather than hourly, as conference documentation involves continuous, end-to-end coverage of scheduled proceedings.
+  </p>
+</section>
+
+<!-- IDEAL -->
+<section>
+  <h2>Ideal For</h2>
+
+  <ul>
+    <li>NGO conferences and conventions</li>
+    <li>Professional associations</li>
+    <li>Organizational assemblies</li>
+    <li>Corporate meetings and forums</li>
+  </ul>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+
+  <p>For inquiries and bookings, please send an email to <strong>chrisrichelong@gmail.com</strong> with the subject line "Inquiry"</p>
+
+  <a class="btn" href="mailto:chrisrichelong@gmail.com">
+    Email Inquiry
+  </a>
 </section>
 
 </main>
 
-  </body>
+</body>
 </html>
