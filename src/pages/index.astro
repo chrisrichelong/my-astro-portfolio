@@ -155,6 +155,48 @@
       gap: 10px;
     }
   }
+
+  /* FAQ accordion styling */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-item {
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 12px 16px;
+  background: #fff;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  list-style: none;
+}
+
+/* remove default triangle in some browsers */
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  float: right;
+  font-weight: 400;
+  color: #16a34a;
+}
+
+.faq-item[open] summary::after {
+  content: "–";
+}
+
+.faq-item p {
+  margin-top: 10px;
+  color: #444;
+}
 </style>
 </head>
 
@@ -169,6 +211,7 @@
     <a href="#services">Services</a>
     <a href="#sample">Sample</a>
     <a href="#rates">Rates</a>
+    <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -309,11 +352,90 @@
   </ul>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq">
+
+    <details class="faq-item">
+      <summary>What exactly does your service cover?</summary>
+      <p>
+        I provide structured written documentation of live formal conferences, including proceedings,
+        speaker summaries, session reports, and motion-and-resolution records. The output is designed for
+        institutional reference, reporting, and archival use.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do you provide photo or video coverage?</summary>
+      <p>
+        No. This service is focused exclusively on <strong>written institutional documentation</strong> of proceedings,
+        discussions, and formal outcomes. It does not include photography, videography, or multimedia production.
+      </p>
+    </details>
+
+    <details class="faq-item">
+  <summary>What do you need from the client?</summary>
+
+  <div class="faq-list">
+    <p>Depending on the setup, I may require:</p>
+    <ul>
+      <li>Event agenda or program flow</li>
+      <li>List of speakers or officers</li>
+      <li>Access to sessions</li>
+      <li>Any reference materials for context</li>
+      <li>Previous documentation for alignment</li>
+    </ul>
+  </div>
+</details>
+
+    <details class="faq-item">
+      <summary>How is the documentation delivered?</summary>
+      <p>
+        Final outputs are typically provided in a structured document format (e.g., Word or PDF),
+        organized by session or agenda item, depending on the scope of the event.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I request revisions?</summary>
+      <p>
+        Yes. Minor revisions for clarity, formatting, or corrections are included within reasonable scope
+        after submission of the draft.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How much are your services?</summary>
+      <p>
+        Rates range from ₱5,000 to ₱15,000 per day depending on the complexity and duration of the event.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Why is it not hourly-based?</summary>
+      <p>
+        Conference documentation requires continuous coverage across sessions. A per-day structure ensures
+        complete and consistent documentation of the entire proceedings from start to finish.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How do I book your service?</summary>
+      <p>
+        You may send an email to <strong>chrisrichelong@gmail.com</strong> with the subject line "Documentation Inquiry” including your event details and schedule.
+      </p>
+    </details>
+
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
 
-  <p>For inquiries and bookings, please send an email to <strong>chrisrichelong@gmail.com</strong> with the subject line "Documentation Inquiry"</p>
+  <p>For inquiries and bookings, please send an email to <strong>chrisrichelong@gmail.com</strong> with the subject line "Documentation Inquiry" including your event details and schedule.</p>
 
   <a class="btn" href="mailto:chrisrichelong@gmail.com">
     Email Inquiry
